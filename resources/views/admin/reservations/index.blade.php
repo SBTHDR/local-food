@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Reservations') }}
             </h2>
-            <a href="" class="px-4 py-2 rounded-md text-white bg-indigo-500">Create Reservation</a>
+            <a href="{{ route('admin.reservations.create') }}" class="px-4 py-2 rounded-md text-white bg-indigo-500">Create Reservation</a>
         </div>
 
     </x-slot>
