@@ -29,19 +29,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b">
-                                <th scope="row"
-                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    Apple MacBook Pro 17"
-                                </th>
-                                <td class="px-6 py-4">
-                                    Sliver
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="px-4 py-2 rounded-md text-white bg-indigo-400">Edit</a>
-                                    <a href="" class="px-4 py-2 rounded-md text-white bg-red-400">Delete</a>
-                                </td>
-                            </tr>
+                            @foreach ($categories as $category)
+                                <tr class="bg-white border-b">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $category->name }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <img src="{{ Storage::url($category->image) }}" alt="" width="120px">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="" class="px-4 py-2 rounded-md text-white bg-indigo-400">Edit</a>
+                                        <a href="" class="px-4 py-2 rounded-md text-white bg-red-400">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
