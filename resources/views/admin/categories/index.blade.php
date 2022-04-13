@@ -36,11 +36,16 @@
                                         {{ $category->name }}
                                     </th>
                                     <td class="px-6 py-4">
-                                        <img src="{{ Storage::url($category->image) }}" alt="" width="120px">
+                                        <img src="{{ Storage::url($category->image) }}" alt="" class="w-16 h-16">
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a href="" class="px-4 py-2 rounded-md text-white bg-indigo-400">Edit</a>
-                                        <a href="" class="px-4 py-2 rounded-md text-white bg-red-400">Delete</a>
+                                        <div class="flex items-center space-x-2">
+                                            <a href="{{ route('admin.categories.edit', $category->id) }}" class="px-4 py-2 rounded-md text-white bg-indigo-400">Edit</a>
+                                            <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                                                @csrf
+                                                <button type="submit" class="px-4 py-2 rounded-md text-white bg-red-400">Delete</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
