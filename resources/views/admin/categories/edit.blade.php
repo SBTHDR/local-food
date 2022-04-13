@@ -25,7 +25,7 @@
                     <div class="mb-6">
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="image">Current Category Image</label>
                         <div>
-                            <img src="{{ Storage::url($category->image) }}" class="w-32 h-32" alt="">
+                            <img src="{{ Storage::url($category->image) }}" class="w-32 mb-2" alt="">
                         </div>
                         <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-transparent p-2.5" aria-describedby="user_avatar_help" id="image" name="image" type="file">
                         <div class="mt-1 text-sm text-gray-500" id="image">Upload New Category Image</div>

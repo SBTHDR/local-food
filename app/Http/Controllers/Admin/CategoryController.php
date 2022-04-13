@@ -90,7 +90,7 @@ class CategoryController extends Controller
             Storage::delete($category->image);
             $image = $request->file('image')->store('public/categories');
         }
-        
+
         $category->update([
             'name' => $request->name,
             'image' => $image
@@ -105,8 +105,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        Storage::delete($category->image);
+        $category->delete();
+        return to_route('admin.categories.index');
     }
 }
